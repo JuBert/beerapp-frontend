@@ -1,41 +1,42 @@
 import {
-  TodoType,
-  TodoDispatchTypes,
-  TODO_LOADING,
-  TODO_SUCCESS,
-  TODO_FAIL,
-} from '../actions/TodoActionTypes';
+  BeerType,
+  BeersType,
+  BeerDispatchTypes,
+  BEER_LOADING,
+  BEER_SUCCESS,
+  BEER_FAIL,
+} from '../actions/BeerActionTypes';
 
 interface DefaultStateI {
   loading: boolean;
-  todos?: TodoType;
+  beers?: BeersType;
 }
 
 const defaultState: DefaultStateI = {
   loading: false,
 };
 
-const todoReducer = (
+const BeerReducer = (
   state: DefaultStateI = defaultState,
-  action: TodoDispatchTypes
+  action: BeerDispatchTypes
 ) => {
   switch (action.type) {
-    case TODO_FAIL:
+    case BEER_FAIL:
       return {
         loading: false,
       };
-    case TODO_LOADING:
+    case BEER_LOADING:
       return {
         loading: true,
       };
-    case TODO_SUCCESS:
+    case BEER_SUCCESS:
       return {
         loading: false,
-        todos: action.payload,
+        beers: action.payload,
       };
     default:
       return state;
   }
 };
 
-export default todoReducer;
+export default BeerReducer;
