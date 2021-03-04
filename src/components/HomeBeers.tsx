@@ -11,9 +11,8 @@ const HomeBeers: React.FC = () => {
     dispatch(GetBeers());
   }, [dispatch]);
   const beers = beerState.beers;
-  console.log(beers);
   return (
-    <div className="App">
+    <div>
       <div
         style={{
           display: 'flex',
