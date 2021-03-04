@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
         width: '100%',
         backgroundColor: '#C3C3C3',
         marginBottom: '40px',
+        alignItems: 'center',
       }}
     >
       <div style={{ margin: '15px' }}>AppLogo</div>
