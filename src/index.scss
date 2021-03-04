@@ -28,6 +28,7 @@ code {
 }
 .navbar-logo {
   margin: 15px;
+  text-decoration: none;
 }
 .navbar-items-container {
   display: flex;
@@ -35,6 +36,11 @@ code {
 }
 .navbar-items {
   margin: 10px;
+  text-decoration: none;
+}
+.navbar-links {
+  text-decoration: none;
+  color: #000;
 }
 
 .home-container {
