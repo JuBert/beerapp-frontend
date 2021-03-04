@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootStore } from '../Store';
-import { GetBeers } from '../actions/BeerActions';
-import { BeersType } from '../actions/BeerActionTypes';
+import { RootStore } from '../redux/Store';
+import { GetBeers } from '../redux/actions/BeerActions';
+import { BeersType } from '../redux/actions/BeerActionTypes';
 
 const HomeBeers: React.FC = () => {
   const dispatch = useDispatch();

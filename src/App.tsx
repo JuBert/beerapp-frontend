@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './index.scss';
 //Components
 import HomeBeers from './components/HomeBeers';
 import Navbar from './components/Navbar';
