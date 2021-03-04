@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import '../index.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStore } from '../redux/Store';
 import { GetBeers } from '../redux/actions/BeerActions';
@@ -13,27 +14,11 @@ const HomeBeers: React.FC = () => {
   const beers = beerState.beers;
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-        }}
-      >
+      <div className="home-container">
         {beers &&
           beers.map((beer) => {
             return (
-              <div
-                key={beer.id}
-                style={{
-                  width: '400px',
-                  border: 'solid',
-                  borderRadius: '15px',
-                  padding: '10px',
-                  margin: '10px',
-                }}
-              >
+              <div key={beer.id} className="home-beer-items">
                 <h2>{beer.name}</h2>
                 <p>{beer.tagline}</p>
               </div>

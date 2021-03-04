@@ -1,23 +1,12 @@
-import React from 'react';
+import '../index.scss';
 const Navbar: React.FC = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        height: '60px',
-        width: '100%',
-        backgroundColor: '#C3C3C3',
-        marginBottom: '40px',
-        alignItems: 'center',
-      }}
-    >
-      <div style={{ margin: '15px' }}>AppLogo</div>
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <div style={{ margin: '10px' }}>Item</div>
-        <div style={{ margin: '10px' }}>Item</div>
-        <div style={{ margin: '10px' }}>Item</div>
+    <div className="navbar-container">
+      <div className="navbar-logo">AppLogo</div>
+      <div className="navbar-items-container">
+        <div className="navbar-items">Item</div>
+        <div className="navbar-items">Item</div>
+        <div className="navbar-items">Item</div>
       </div>
     </div>
   );

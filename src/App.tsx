@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.scss';
 //Components
 import HomeBeers from './components/HomeBeers';
