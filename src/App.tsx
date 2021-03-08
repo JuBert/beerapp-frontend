@@ -1,11 +1,10 @@
 import './index.scss';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //Pages
 import home from './pages/home';
 import about from './pages/about';
 import contact from './pages/contact';
 //Components
-import HomeBeers from './components/HomeBeers';
 import Navbar from './components/Navbar';
 
 const App: React.FC = () => {

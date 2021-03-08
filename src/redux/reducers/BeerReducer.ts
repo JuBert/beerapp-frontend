@@ -1,5 +1,4 @@
 import {
-  BeerType,
   BeersType,
   BeerDispatchTypes,
   BEER_LOADING,
@@ -32,7 +31,9 @@ const BeerReducer = (
     case BEER_SUCCESS:
       return {
         loading: false,
+        // beers: [...state.beers, ...action.payload],
         beers: action.payload,
+        // beers: {...state.beers,[action.payload.beers._id]: action.payload}
       };
     default:
       return state;

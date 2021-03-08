@@ -2,9 +2,7 @@ export const BEER_LOADING = 'BEER_LOADING';
 export const BEER_SUCCESS = 'BEER_SUCCESS';
 export const BEER_FAIL = 'BEER_FAIL';
 
-export type BeersType = {
-  beers: BeerType[];
-};
+export type BeersType = { beers?: BeerType };
 
 export type BeerType = {
   id: number;
@@ -12,6 +10,7 @@ export type BeerType = {
   tagline: string;
   description: string;
   food_paring: Array<string>;
+  map: Function;
 };
 
 export interface BeerLoading {
@@ -25,7 +24,7 @@ export interface BeerFail {
 export interface BeerSucess {
   type: typeof BEER_SUCCESS;
   payload: {
-    todos: BeersType;
+    beers: BeerType[];
   };
 }
 

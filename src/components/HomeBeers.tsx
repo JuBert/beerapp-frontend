@@ -1,22 +1,29 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../index.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStore } from '../redux/Store';
 import { GetBeers } from '../redux/actions/BeerActions';
-import { BeersType } from '../redux/actions/BeerActionTypes';
+import { BeerType, BeersType } from '../redux/actions/BeerActionTypes';
 
 const HomeBeers: React.FC = () => {
   const dispatch = useDispatch();
+  const [page, setPage] = useState<number>(1);
+
   const beerState: BeersType = useSelector((state: RootStore) => state.beers);
   useEffect(() => {
-    dispatch(GetBeers());
-  }, [dispatch]);
-  const beers = beerState.beers;
+    dispatch(GetBeers(page));
+  }, [page, dispatch]);
+
+  const handleClick = () => {
+    setPage(page + 1);
+    dispatch(GetBeers(page));
+  };
+
   return (
     <div>
       <div className="home-container">
-        {beers &&
-          beers.map((beer) => {
+        {beerState.beers &&
+          beerState.beers.map((beer: BeerType) => {
             return (
               <div key={beer.id} className="home-beer-items">
                 <h2>{beer.name}</h2>
@@ -25,6 +32,7 @@ const HomeBeers: React.FC = () => {
             );
           })}
       </div>
+      <button onClick={handleClick}>load more</button>
     </div>
   );
 };
